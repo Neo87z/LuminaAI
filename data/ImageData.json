@@ -1,0 +1,22 @@
+{
+  
+  "imageGenerator": [
+    {
+      "author": "/images/team/team-01.jpg",
+      "title": "You",
+      "desc": "Generate an Enchanting Female Character Soaring Through the Skies with Aesthetic Appeal",
+      "content": [
+        {
+          "img": "/images/icons/loader-one.gif",
+          "aiImg": "/images/team/avater.png",
+          "text": "Generating answers for you…",
+          "scan": "Scanning the data...",
+          "title": "Certainly! Your visual representation has been created using the provided prompt:",
+          "caption": "Aesthetic --aspect-ratio 3:1 --quality 4 --size 580",
+          "generateImg": "/images/generator-img/photo-7.png",
+          "generateImg2": "/images/generator-img/photo-13.png"
+        }
+      ]
+    }
+  ]
+}
