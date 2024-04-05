@@ -18,9 +18,8 @@ const LeftpanelDashboard = () => {
   return (
     <>
       <div
-        className={`rbt-left-panel popup-dashboardleft-section ${
-          shouldCollapseLeftbar ? "collapsed" : ""
-        }`}
+        className={`rbt-left-panel popup-dashboardleft-section ${shouldCollapseLeftbar ? "collapsed" : ""
+          }`}
       >
         <div className="rbt-default-sidebar">
           <div className="inner">
@@ -37,7 +36,7 @@ const LeftpanelDashboard = () => {
                         <span>Welcome</span>
                       </Link>
                     </li>
-                    
+
                   </ul>
                   <div className="rbt-sm-separator"></div>
                   <ul className="dashboard-mainmenu rbt-default-sidebar-list">
@@ -74,7 +73,7 @@ const LeftpanelDashboard = () => {
 
                 <div className="rbt-sm-separator"></div>
 
-              
+
               </div>
             </div>
           </div>
