@@ -15,28 +15,10 @@ const Dashboard = () => {
       <div className="rbt-main-content mr--0">
         <div className="rbt-daynamic-page-content">
           <div className="rbt-dashboard-content">
-            <div className="banner-area">
-              <BannerArea />
-            </div>
+            
             <div className="content-page">
               <div className="chat-box-list">
-                <div className="welcome-wrapper">
-                  <div className="content-section">
-                    <h4 className="title">👋 Welcome, Rafi</h4>
-                  </div>
-                  <div className="btn-section">
-                    <a
-                      className="btn-default bg-solid-primary"
-                      data-bs-toggle="modal"
-                      data-bs-target="#newchatModal"
-                    >
-                      <span className="icon pe-2">
-                        <i className="feather-plus-circle"></i>
-                      </span>
-                      <span>New Chat</span>
-                    </a>
-                  </div>
-                </div>
+                
                 <div className="rainbow-generartor-section rainbow-section-gap">
                   <div
                     className="section-title text-center sal-animate"
@@ -45,7 +27,7 @@ const Dashboard = () => {
                     data-sal-delay="100"
                   >
                     <h4 className="subtitle ">
-                      <span className="theme-gradient">ChaetenAI</span>
+                      <span className="theme-gradient">ChaetenAssI</span>
                     </h4>
                     <h2 className="title w-600 mb--20">
                       Unleashing the Power of ChatAI
