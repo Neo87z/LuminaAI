@@ -27,7 +27,7 @@ const ImageGenerator = () => {
 
 
   const handleArrowClick = () => {
-    if (message.trim() === "" ) {
+    if (message.trim() === "") {
       toast.error("Please Enter Image Generation Query");
       return;
     }
@@ -37,7 +37,7 @@ const ImageGenerator = () => {
     toast.dismiss();
 
     const promise = new Promise((resolve, reject) => {
-      fetch("http://localhost:8089/OpenAI/AI-Asistant", {
+      fetch("https://luminaaibackend-97ca5384e45f.herokuapp.com/OpenAI/AI-Asistant", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -51,7 +51,7 @@ const ImageGenerator = () => {
           } else {
             setImageData((prevImageData) => [...prevImageData, data.data]);
           }
-         
+
           resolve(data);
         })
         .catch((error) => {
@@ -129,74 +129,42 @@ const ImageGenerator = () => {
       <br />
       {imageData.length > 0 ? (
         <div className={`image-container${isChanging ? " changing" : ""}`}>
-          {imageData.map((data, index) => (
-
-
-            <div className="chat-box-list pt--30" id="chatContainer" >
-              <div className="chat-box-list pt--30" id="chatContainer" >
-                <div className="chat-box author-speech bg-flashlight">
-                  <div className="inner">
-                    <div className="chat-section">
-                      <div className="author">
-                        <Image
-                          className="w-100"
-                          width={40}
-                          height={40}
-                          src="/images/team/team-01.jpg"
-                          alt="Author"
-                        />
-                      </div>
-                      <div className="chat-content">
-                        <h6 className="title">Title</h6>
-                        <p>Desc</p>
-                      </div>
-                    </div>
+          <div className="chat-box bg-flashlight">
+            {imageData.map((data, index) => (
+              <div key={index} className="chat-section generate-details-section">
+                <div className="chat-content">
+                  <h6 className="title">
+                    <span className="rainbow-badge-card">User</span>
+                  </h6>
+                  <div className="image-caption mb--20">
+                    <h6 className="caption-title ">
+                      {data.title}
+                    </h6>
                   </div>
                 </div>
-
-                <div className="chat-box ai-speech bg-flashlight">
-
-                  <div
-                    className="inner top-flashlight leftside light-xl"
-
-                  >
-                    <div className="chat-section">
-                      <div className="author">
-                        <Image
-                          src="/images/team/avater.png"
-                          width={40}
-                          height={40}
-                          alt="Loader Images"
-                        />
-                      </div>
-                      <div className="chat-content">
-                        <h6 className="title">
-                          ChatenAI <span className="rainbow-badge-card">Bot</span>
-                        </h6>
-                        <p className="mb--20">{data.caption}</p>
-                        
-                        <Reaction />
-                      </div>
-                    </div>
+                <div className="chat-content">
+                  <h6 className="title">
+                    <span className="rainbow-badge-card">Lumina AI</span>
+                  </h6>
+                  <div className="image-caption mb--20" style={{ marginLeft: '50px' }}>
+                    <h6 className="caption-title ">
+                      {data.caption}
+                    </h6>
                   </div>
-
                 </div>
               </div>
-
-
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       ) : (
         <div style={{ maxWidth: "50%", height: "auto", margin: "0 auto" }}>
           <br /> <br /> <br />
-
           <ToastContainer
             position="top-right"
-            autoClose={false} // Disable auto close
+            autoClose={false}
             hideProgressBar={false}
             newestOnTop={false}
-            closeOnClick={true} // Close on click
+            closeOnClick={true}
             rtl={false}
             pauseOnFocusLoss
             draggable
@@ -213,7 +181,6 @@ const ImageGenerator = () => {
           />
         </div>
       )}
-
       <div className="rbt-static-bar" style={{ transform: "translateX(-12.5%)" }}>
         <Tooltip id="my-tooltip" className="custom-tooltip tooltip-inner" />
         <form className="new-chat-form border-gradient">
@@ -225,8 +192,8 @@ const ImageGenerator = () => {
               loading
                 ? "Lumni AI is Generating The Image"
                 : 'Ask Me Anything'
-            } // Dynamically set placeholder based on loading state and selected option
-            disabled={arrowClicked || loading} // Disable textarea when arrow is clicked or when loading is true
+            }
+            disabled={arrowClicked || loading}
           ></textarea>
           <div className="left-icons">
             <div title="ChatenAI" className="form-icon icon-gpt">
@@ -234,7 +201,6 @@ const ImageGenerator = () => {
             </div>
           </div>
           <div className="right-icons">
-
             <a
               className="form-icon icon-mic"
               data-tooltip-id="my-tooltip"
@@ -253,7 +219,6 @@ const ImageGenerator = () => {
             </a>
           </div>
         </form>
-
         <p className="b3 small-text">
           ChatenAi can make mistakes. Consider checking important information.
         </p>

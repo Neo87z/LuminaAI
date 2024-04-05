@@ -32,7 +32,7 @@ const CodeGenerator = () => {
     toast.dismiss();
 
     const promise = new Promise((resolve, reject) => {
-      fetch("http://localhost:8089/OpenAI/generate-code", {
+      fetch("https://luminaaibackend-97ca5384e45f.herokuapp.com/OpenAI/generate-code", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -124,19 +124,19 @@ const CodeGenerator = () => {
               <div className="chat-box ai-speech bg-flashlight">
                 <div className="inner top-flashlight leftside light-xl">
                   <div className="chat-section generate-details-section">
-                    <div className="author">
-                      <Image
-                        className="w-100"
-                        src={avatar}
-                        width={40}
-                        height={40}
-                        alt="ChatenAI"
-                      />
-                    </div>
+
+
                     <div className="chat-content">
-                      <h6 className="title mb--20">
-                        Certainly! Here&apos;s an example of a simple 5-column table
-                        using HTML, CSS, and JavaScript:
+                      <h6 className="title">
+                        <span className="rainbow-badge-card">User</span>
+                      </h6>
+                      <div className="image-caption mb--20">
+                        <h6 className="caption-title ">
+                          {data.title}
+                        </h6>
+                      </div>
+                      <h6 className="title">
+                        <span className="rainbow-badge-card">Lumina AI</span>
                       </h6>
                       <div className="highlight position-relative">
                         <button

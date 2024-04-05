@@ -26,7 +26,7 @@ const ImageGenerator = () => {
     toast.dismiss();
 
     const promise = new Promise((resolve, reject) => {
-      fetch("http://localhost:8089/OpenAI", {
+      fetch("https://luminaaibackend-97ca5384e45f.herokuapp.com/OpenAI", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -138,14 +138,23 @@ const ImageGenerator = () => {
         <div className={`image-container${isChanging ? " changing" : ""}`}>
           {imageData.map((data, index) => (
             <div className="chat-box-list pt--30" id="chatContainer" key={index}>
+
               <div className="chat-box ai-speech bg-flashlight">
                 <div className="inner top-flashlight leftside light-xl" key={index}>
                   <div className="chat-section generate-details-section">
+
                     <div className="chat-content">
-                      <h6 className="title mb--20">{data.title}</h6>
+
+                      <h6 className="title">
+                        <span className="rainbow-badge-card">User</span>
+                      </h6>
                       <div className="image-caption mb--20">
-                        <h5 className="caption-title theme-gradient">{data.caption}</h5>
+                        <h6  className="caption-title ">
+                          {data.caption}
+                        </h6>
                       </div>
+                      
+                    
                       <div className="img-box-grp mb--20">
                         <div className="img-box">
                           <Image
@@ -155,13 +164,7 @@ const ImageGenerator = () => {
                             height={1380}
                             alt="Image Generation"
                           />
-                          <button
-                            className="download-btn btn-default btn-small bg-solid-primary"
-                            onClick={() => handleDownload(data.generateImg)} // Pass the image URL to the handleDownload function
-                          >
-                            <i className="feather-download"></i>
-                            <span>Download</span>
-                          </button>
+                       
                         </div>
                         {data.generateImg2 && (
                           <div className="img-box">
@@ -172,17 +175,11 @@ const ImageGenerator = () => {
                               height={1380}
                               alt="Image Generation"
                             />
-                            <button
-                              className="download-btn btn-default btn-small bg-solid-primary"
-                              onClick={() => handleDownload(data.generateImg2)} // Pass the image URL to the handleDownload function
-                            >
-                              <i className="feather-download"></i>
-                              <span>Download</span>
-                            </button>
+                          
                           </div>
                         )}
                       </div>
-                     
+<Reaction></Reaction>
                     </div>
                   </div>
                 </div>

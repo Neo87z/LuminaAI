@@ -30,9 +30,8 @@ const HeaderDashboard = ({ display }) => {
               <div className="header-left d-flex">
                 <div className="expand-btn-grp">
                   <button
-                    className={`bg-solid-primary popup-dashboardleft-btn ${
-                      !mobile ? "collapsed" : ""
-                    }`}
+                    className={`bg-solid-primary popup-dashboardleft-btn ${!mobile ? "collapsed" : ""
+                      }`}
                     onClick={() => setMobile(!mobile)}
                   >
                     <i className="feather-sidebar left"></i>
@@ -68,41 +67,43 @@ const HeaderDashboard = ({ display }) => {
                 <div className="header-btn d-none d-md-block">
                   <Link
                     className="btn-default btn-small round"
-                    href="/plans-billing"
+                    href="/dashboard"
                   >
-                    Upgrade <i className="feather-zap"></i>
+                    Telegram <i className="feather-zap"></i>
+                  </Link>
+                </div>
+                <div className="header-btn d-none d-md-block">
+                  <Link
+                    className="btn-default btn-small round"
+                    href="/dashboard"
+                  >
+                    Buy$Lumina <i className="feather-zap"></i>
+                  </Link>
+                </div>
+                <div className="header-btn d-none d-md-block">
+                  <Link
+                    className="btn-default btn-small round"
+                    href="/dashboard"
+                  >
+                    Stake $Lumina <i className="feather-zap"></i>
+                  </Link>
+                </div>
+                <div className="header-btn d-none d-md-block">
+                  <Link
+                    className="btn-default btn-small round"
+                    href="/dashboard"
+                  >
+                    DAO <i className="feather-zap"></i>
                   </Link>
                 </div>
 
-                <div className="mobile-menu-bar mr--10 ml--10 d-block d-lg-none">
-                  <div className="hamberger">
-                    <button
-                      className="hamberger-button"
-                      onClick={() => setActiveMobileMenu(!activeMobileMenu)}
-                    >
-                      <i className="feather-menu"></i>
-                    </button>
-                  </div>
-                </div>
+              
 
-                <GridMenu ToolsData={ToolsData} />
-
-                <div className="account-access rbt-user-wrapper right-align-dropdown">
-                  <div className="rbt-user ml--0">
-                    <a className="admin-img" href="#">
-                      <Image src={avatar} alt="Admin" />
-                    </a>
-                  </div>
-                  <div className="rbt-user-menu-list-wrapper">
-                    <UserMenu />
-                  </div>
-                </div>
 
                 <div className={`expand-btn-grp ${display}`}>
                   <button
-                    className={`bg-solid-primary popup-dashboardright-btn ${
-                      !rightBar ? "collapsed" : ""
-                    }`}
+                    className={`bg-solid-primary popup-dashboardright-btn ${!rightBar ? "collapsed" : ""
+                      }`}
                     onClick={() => setRightBar(!rightBar)}
                   >
                     <i className="feather-sidebar right"></i>

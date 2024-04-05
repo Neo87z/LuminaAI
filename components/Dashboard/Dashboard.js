@@ -65,31 +65,7 @@ const Dashboard = () => {
               </div>
             </div>
 
-            <div className="rbt-static-bar collapse-width">
-              <Form />
-              <ul className="staticbar-btn-grp d-none d-md-flex">
-                <li>
-                  <button className="btn-default btn-small btn-border">
-                    <span>Ask Tough Question</span>
-                  </button>
-                </li>
-                <li>
-                  <button className="btn-default btn-small btn-border">
-                    <span>Create Image Artwork</span>
-                  </button>
-                </li>
-                <li>
-                  <button className="btn-default btn-small btn-border">
-                    <span>Image Editor Options</span>
-                  </button>
-                </li>
-                <li>
-                  <button className="btn-default btn-small btn-border">
-                    <span>Give Voice command</span>
-                  </button>
-                </li>
-              </ul>
-            </div>
+          
           </div>
         </div>
       </div>

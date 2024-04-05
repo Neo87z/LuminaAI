@@ -37,7 +37,7 @@ const ImageGenerator = () => {
     toast.dismiss();
 
     const promise = new Promise((resolve, reject) => {
-      fetch("http://localhost:8089/OpenAI/generate-email", {
+      fetch("https://luminaaibackend-97ca5384e45f.herokuapp.com/OpenAI/generate-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -140,62 +140,49 @@ const ImageGenerator = () => {
 
             <div className="chat-box-list pt--30" id="chatContainer" >
               <div className="chat-box-list pt--30" id="chatContainer" >
-                <div className="chat-box author-speech bg-flashlight">
-                  <div className="inner">
-                    <div className="chat-section">
-                      <div className="author">
-                        <Image
-                          className="w-100"
-                          width={40}
-                          height={40}
-                          src="/images/team/team-01.jpg"
-                          alt="Author"
-                        />
-                      </div>
-                      <div className="chat-content">
-                        <h6 className="title">Title</h6>
-                        <p>Desc</p>
-                      </div>
+                <div key={index} className="chat-section generate-details-section">
+                  <div className="chat-content">
+                    <h6 className="title">
+                      <span className="rainbow-badge-card">User</span>
+                    </h6>
+                    <div className="image-caption mb--20">
+                      <h6  className="caption-title ">
+                        {data.title}
+                      </h6>
                     </div>
                   </div>
+
                 </div>
 
                 <div className="chat-box ai-speech bg-flashlight">
-                
-                    <div
-                      className="inner top-flashlight leftside light-xl"
-                     
-                    >
-                      <div className="chat-section">
-                        <div className="author">
-                          <Image
-                            src="/images/team/avater.png"
-                            width={40}
-                            height={40}
-                            alt="Loader Images"
-                          />
-                        </div>
-                        <div className="chat-content">
-                          <h6 className="title">
-                            ChatenAI <span className="rainbow-badge-card">Bot</span>
-                          </h6>
-                          <p className="mb--20">{data.Subject}</p>
-                          <p className="mb--20">{data.Greeting}</p>
-                          <p className="mb--20">{data.Body1}</p>
-                          <p className="mb--20">{data.Body2}</p>
-                          <p className="mb--20">{data.Conclusion}</p>
-                          <p className="mb--20">{data.Greeting}</p>
-                          <p className="mb--10">Best Regards</p>
-                          <p className="mb--20">{data.name}</p>
-                          <Reaction />
-                        </div>
+
+                  <div
+                    className="inner top-flashlight leftside light-xl"
+
+                  >
+                    <div className="chat-section">
+                    
+                      <div className="chat-content">
+                        <h6 className="title">
+                        <span className="rainbow-badge-card">Lumina AI</span>  
+                        </h6>
+                        <p className="mb--20">{data.Subject}</p>
+                        <p className="mb--20">{data.Greeting}</p>
+                        <p className="mb--20">{data.Body1}</p>
+                        <p className="mb--20">{data.Body2}</p>
+                        <p className="mb--20">{data.Conclusion}</p>
+                        <p className="mb--20">{data.Greeting}</p>
+                        <p className="mb--10">Best Regards</p>
+                        <p className="mb--20">{data.name}</p>
+                        <Reaction />
                       </div>
                     </div>
-                 
+                  </div>
+
                 </div>
               </div>
-              
-              
+
+
             </div>
           ))}
         </div>
@@ -265,7 +252,7 @@ const ImageGenerator = () => {
             </a>
           </div>
         </form>
-       
+
         <p className="b3 small-text">
           ChatenAi can make mistakes. Consider checking important information.
         </p>

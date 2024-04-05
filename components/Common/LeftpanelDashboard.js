@@ -37,15 +37,7 @@ const LeftpanelDashboard = () => {
                         <span>Welcome</span>
                       </Link>
                     </li>
-                    <li>
-                      <Link
-                        className={isActive("/plans-billing") ? "active" : ""}
-                        href="/plans-billing"
-                      >
-                        <i className="feather-briefcase"></i>
-                        <span>Manage Subsription</span>
-                      </Link>
-                    </li>
+                    
                   </ul>
                   <div className="rbt-sm-separator"></div>
                   <ul className="dashboard-mainmenu rbt-default-sidebar-list">
@@ -82,53 +74,7 @@ const LeftpanelDashboard = () => {
 
                 <div className="rbt-sm-separator"></div>
 
-                <nav className="mainmenu-nav">
-                  <ul className="dashboard-mainmenu rbt-default-sidebar-list">
-                    <li className="has-submenu">
-                      <a
-                        className="collapse-btn collapsed"
-                        data-bs-toggle="collapse"
-                        href="#collapseExample"
-                        role="button"
-                        aria-expanded="false"
-                        aria-controls="collapseExample"
-                      >
-                        <i className="feather-plus-circle"></i>
-                        <span>Setting</span>
-                      </a>
-                      <div className="collapse" id="collapseExample">
-                        <UserMenuItems parentClass="submenu rbt-default-sidebar-list" />
-                      </div>
-                    </li>
-                    <li>
-                      <Link href="#">
-                        <i className="feather-award"></i>
-                        <span>Help & FAQ</span>
-                      </Link>
-                    </li>
-                  </ul>
-                  <div className="rbt-sm-separator"></div>
-                  <ul className="dashboard-mainmenu rbt-default-sidebar-list">
-                    <li>
-                      <Link
-                        className={isActive("/release-notes") ? "active" : ""}
-                        href="/release-notes"
-                      >
-                        <i className="feather-bell"></i>
-                        <span>Release notes</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        className={isActive("/terms-policy") ? "active" : ""}
-                        href="/terms-policy"
-                      >
-                        <i className="feather-briefcase"></i>
-                        <span>Terms & Policy</span>
-                      </Link>
-                    </li>
-                  </ul>
-                </nav>
+              
               </div>
             </div>
           </div>
@@ -146,14 +92,14 @@ const LeftpanelDashboard = () => {
                   />
                 </div>
                 <div className="author-desc">
-                  <h6>Rafi Dev</h6>
-                  <p>trentadam@net</p>
+                  <h6>Luna AI</h6>
+                  <p>help@lunaai.com</p>
                 </div>
                 <div className="author-badge">Free</div>
               </Link>
               <div className="btn-part">
                 <Link href="/pricing" className="btn-default btn-border">
-                  Upgrade To Pro
+                  Join Our Telegram
                 </Link>
               </div>
             </div>

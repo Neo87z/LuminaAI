@@ -37,12 +37,12 @@ const ImageGenerator = () => {
     toast.dismiss();
 
     const promise = new Promise((resolve, reject) => {
-      fetch("http://localhost:8089/OpenAI/generate-text", {
+      fetch("https://luminaaibackend-97ca5384e45f.herokuapp.com/OpenAI/generate-text", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ prompt: message , selectionData:selectedOption }),
+        body: JSON.stringify({ prompt: message, selectionData: selectedOption }),
       })
         .then((response) => response.json())
         .then((data) => {
@@ -144,9 +144,19 @@ const ImageGenerator = () => {
                   <div className="chat-section generate-details-section">
 
                     <div className="chat-content">
-                      <h6 className="title mb--20">{data.title}</h6>
+                      <h6 className="title">
+                        <span className="rainbow-badge-card">User</span>
+                      </h6>
                       <div className="image-caption mb--20">
-                        <h5 className="caption-title theme-gradient">{data.caption}</h5>
+                        <h6 className="caption-title ">
+                          {data.title}
+                        </h6>
+                      </div>
+                      <h6 className="title">
+                        <span className="rainbow-badge-card">Lumina AI</span>
+                      </h6>
+                      <div className="image-caption mb--20">
+                        <h5 className="caption-title ">{data.caption}</h5>
                       </div>
 
 
@@ -159,7 +169,7 @@ const ImageGenerator = () => {
           ))}
         </div>
       ) : (
-        <div style={{ maxWidth: "50%", height: "auto", margin: "0 auto" }}>
+        <div  style={{ maxWidth: "50%", height: "auto", margin: "0 auto" }}>
           <br /> <br /> <br />
 
           <ToastContainer
@@ -205,7 +215,7 @@ const ImageGenerator = () => {
             </div>
           </div>
           <div className="right-icons">
-            
+
             <a
               className="form-icon icon-mic"
               data-tooltip-id="my-tooltip"
