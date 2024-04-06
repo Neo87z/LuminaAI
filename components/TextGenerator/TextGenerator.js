@@ -69,7 +69,7 @@ const ImageGenerator = () => {
     toast.promise(
       promise,
       {
-        pending: "Generating Image",
+        pending: "Generating Text",
         success: {
           render: ({ data }) => {
             setTimeout(toast.dismiss, 20000);
@@ -204,7 +204,7 @@ const ImageGenerator = () => {
             rows="1"
             placeholder={
               loading
-                ? "Lumni AI is Generating The Image"
+                ? "Lumni AI is Generating The Text"
                 : placeholderText
             } // Dynamically set placeholder based on loading state and selected option
             disabled={arrowClicked || loading} // Disable textarea when arrow is clicked or when loading is true

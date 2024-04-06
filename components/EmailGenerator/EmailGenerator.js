@@ -28,7 +28,7 @@ const ImageGenerator = () => {
 
   const handleArrowClick = () => {
     if (message.trim() === "" || message === placeholderText) {
-      toast.error("Please Enter Image Generation Query");
+      toast.error("Please Enter Email Generation Query");
       return;
     }
     setArrowClicked(true);
@@ -69,7 +69,7 @@ const ImageGenerator = () => {
     toast.promise(
       promise,
       {
-        pending: "Generating Image",
+        pending: "Generating Email",
         success: {
           render: ({ data }) => {
             setTimeout(toast.dismiss, 20000);
@@ -222,7 +222,7 @@ const ImageGenerator = () => {
             rows="1"
             placeholder={
               loading
-                ? "Lumni AI is Generating The Image"
+                ? "Lumni AI is Generating The Email"
                 : placeholderText
             } // Dynamically set placeholder based on loading state and selected option
             disabled={arrowClicked || loading} // Disable textarea when arrow is clicked or when loading is true

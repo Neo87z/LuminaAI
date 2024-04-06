@@ -69,7 +69,7 @@ const ImageGenerator = () => {
     toast.promise(
       promise,
       {
-        pending: "Generating Image",
+        pending: "Asking AI",
         success: {
           render: ({ data }) => {
             setTimeout(toast.dismiss, 20000);
@@ -181,7 +181,7 @@ const ImageGenerator = () => {
           />
         </div>
       )}
-      <div className="rbt-static-bar" style={{ transform: "translateX(-12.5%)" }}>
+      <div className="rbt-static-bar">
         <Tooltip id="my-tooltip" className="custom-tooltip tooltip-inner" />
         <form className="new-chat-form border-gradient">
           <textarea
@@ -190,7 +190,7 @@ const ImageGenerator = () => {
             rows="1"
             placeholder={
               loading
-                ? "Lumni AI is Generating The Image"
+                ? "Asking AI"
                 : 'Ask Me Anything'
             }
             disabled={arrowClicked || loading}

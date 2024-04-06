@@ -24,7 +24,7 @@ const CodeGenerator = () => {
 
   const handleArrowClick = () => {
     if (message.trim() === "") {
-      toast.error("Please Enter Image Generation Query");
+      toast.error("Please Enter Code Generation Query");
       return;
     }
     setArrowClicked(true);
@@ -64,7 +64,7 @@ const CodeGenerator = () => {
     toast.promise(
       promise,
       {
-        pending: "Generating Image",
+        pending: "Generating Code",
         success: {
           render: ({ data }) => {
             setTimeout(toast.dismiss, 20000);
@@ -186,10 +186,11 @@ const CodeGenerator = () => {
             height={1380}
             alt="Sample Image"
           />
-        </div>
-      )}
 
-      <div className="rbt-static-bar" style={{ transform: "translateX(-12.5%)" }}>
+        </div>
+
+      )}
+      <div className="rbt-static-bar" >
         <Tooltip id="my-tooltip" className="custom-tooltip tooltip-inner" />
         <form className="new-chat-form border-gradient">
           <textarea
@@ -198,7 +199,7 @@ const CodeGenerator = () => {
             rows="1"
             placeholder={
               loading
-                ? "Lumni AI is Generating The Image"
+                ? "Lumni AI is Generating The Code"
                 : "Send a message..."
             }
             disabled={arrowClicked || loading}
@@ -209,7 +210,7 @@ const CodeGenerator = () => {
             </div>
           </div>
           <div className="right-icons">
-            
+
             <a
               className="form-icon icon-mic"
               data-tooltip-id="my-tooltip"
@@ -232,6 +233,7 @@ const CodeGenerator = () => {
           ChatenAi can make mistakes. Consider checking important information.
         </p>
       </div>
+
     </>
   );
 };
