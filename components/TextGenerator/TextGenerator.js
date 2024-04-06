@@ -195,7 +195,7 @@ const ImageGenerator = () => {
         </div>
       )}
 
-      <div className="rbt-static-bar" style={{ transform: "translateX(-12.5%)" }}>
+      <div className="rbt-static-bar" >
         <Tooltip id="my-tooltip" className="custom-tooltip tooltip-inner" />
         <form className="new-chat-form border-gradient">
           <textarea
